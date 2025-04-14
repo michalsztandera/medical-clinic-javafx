@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.MainController">
+    <top>
+        <Label text="Medical Clinic System" styleClass="header" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="30" alignment="CENTER">
+            <Button text="Pacjenci" onAction="#handlePatients" styleClass="menu-button"/>
+            <Button text="Wizyty" onAction="#handleAppointments" styleClass="menu-button"/>
+            <Button text="Recepty" onAction="#handlePrescriptions" styleClass="menu-button"/>
+            <Button text="Wyjście" onAction="#handleExit" styleClass="menu-button"/>
+        </VBox>
+    </center>
+</BorderPane>
