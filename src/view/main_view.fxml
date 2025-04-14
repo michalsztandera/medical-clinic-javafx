@@ -17,4 +17,11 @@
             <Button text="Wyjście" onAction="#handleExit" styleClass="menu-button"/>
         </VBox>
     </center>
+    <bottom>
+        <HBox fx:id="statusBar" alignment="BOTTOM_RIGHT" spacing="10" BorderPane.alignment="CENTER_RIGHT">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        </HBox>
+    </bottom>
 </BorderPane>

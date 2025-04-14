@@ -20,11 +20,51 @@
     -fx-border-radius: 16;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0, 4);
     -fx-cursor: hand;
-    -fx-border-color: transparent;
-    -fx-transition: all 0.3s ease-in-out;
 }
 
 .menu-button:hover {
     -fx-background-color: linear-gradient(to bottom, #00c9ff, #92fe9d);
     -fx-text-fill: black;
+}
+
+.form-container {
+    -fx-padding: 40;
+    -fx-background-color: linear-gradient(to right, #434343, #000000);
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 15, 0.2, 0, 4);
+    -fx-max-width: 600;
+}
+
+.form-title {
+    -fx-font-size: 28px;
+    -fx-text-fill: white;
+    -fx-padding: 10 0 30 0;
+}
+
+.text-field, .text-area {
+    -fx-font-size: 16px;
+    -fx-pref-width: 100%;
+}
+
+.form-button {
+    -fx-font-size: 18px;
+    -fx-background-color: linear-gradient(to bottom, #00c9ff, #92fe9d);
+    -fx-background-radius: 12;
+    -fx-text-fill: black;
+    -fx-padding: 10 20;
+}
+.status-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-padding: 5 10 5 0;
+}
+
+.hbox {
+    -fx-padding: 8px;
+    -fx-alignment: center-right;
+}
+
+#connectionIcon {
+    -fx-font-size: 18px;
 }
