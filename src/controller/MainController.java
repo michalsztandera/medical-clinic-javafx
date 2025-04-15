@@ -4,15 +4,41 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import manager.SceneManager;
 import manager.DatabaseManager;
+import manager.SceneManager;
 
 public class MainController {
 
-    // 📦 Nawigacja
+    @FXML private Label connectionStatus;
+    @FXML private Label connectionIcon;
+
     @FXML
-    private void handlePatients(ActionEvent event) {
-        SceneManager.setScene("/view/patient_form.fxml");
+    public void initialize() {
+        new Thread(this::checkConnection).start();
+    }
+
+    private void checkConnection() {
+        try {
+            boolean connected = !DatabaseManager.getConnection().isClosed();
+            Platform.runLater(() -> updateConnectionUI(connected));
+        } catch (Exception e) {
+            Platform.runLater(() -> updateConnectionUI(false));
+        }
+    }
+
+    private void updateConnectionUI(boolean connected) {
+        if (connected) {
+            connectionStatus.setText("Połączono z bazą danych");
+            connectionIcon.setText("✅");
+        } else {
+            connectionStatus.setText("Brak połączenia z bazą danych");
+            connectionIcon.setText("❌");
+        }
+    }
+
+    @FXML
+    private void patient_list(ActionEvent event) {
+        SceneManager.setScene("/view/patient_view.fxml");
     }
 
     @FXML
@@ -28,38 +54,5 @@ public class MainController {
     @FXML
     private void handleExit(ActionEvent event) {
         System.exit(0);
-    }
-
-    // 🌐 Status połączenia
-    @FXML private Label connectionStatus;
-    @FXML private Label connectionIcon;
-
-    @FXML
-    public void initialize() {
-        checkConnection();
-    }
-
-    private void checkConnection() {
-        new Thread(() -> {
-            try {
-                Thread.sleep(500); // pozwól JavaFX się załadować
-                boolean connected = !DatabaseManager.getConnection().isClosed();
-                updateConnectionUI(connected);
-            } catch (Exception e) {
-                updateConnectionUI(false);
-            }
-        }).start();
-    }
-
-    private void updateConnectionUI(boolean connected) {
-        Platform.runLater(() -> {
-            if (connected) {
-                connectionStatus.setText("Połączono z serwerem");
-                connectionIcon.setText("✅");
-            } else {
-                connectionStatus.setText("Brak połączenia z serwerem");
-                connectionIcon.setText("❌");
-            }
-        });
     }
 }

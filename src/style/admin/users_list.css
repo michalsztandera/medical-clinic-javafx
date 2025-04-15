@@ -1,0 +1,48 @@
+.users-list {
+    -fx-background-color: #f9f9f9;
+}
+
+.section-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.search-field {
+    -fx-pref-width: 250px;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+}
+
+.search-button {
+    -fx-font-size: 14px;
+    -fx-background-color: #4a90e2;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}
+
+.add-button {
+    -fx-font-size: 14px;
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}
+
+.users-table {
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.bottom-bar .button {
+    -fx-background-radius: 8;
+}
+
+.refresh-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.back-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}

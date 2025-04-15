@@ -9,5 +9,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="mysql-connector-j-9.3.0" level="project" />
+    <orderEntry type="library" name="fontawesomefx-8.9" level="project" />
+    <orderEntry type="library" name="ikonli" level="project" />
+    <orderEntry type="library" name="javax.mail-1.6.2" level="project" />
   </component>
 </module>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenestylesheet resource="/style/admin/dashboard.css"?>
+
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.admin.AdminDashboardController"
+      alignment="TOP_CENTER" spacing="25"
+      stylesheets="@/style/admin/dashboard.css"
+      styleClass="admin-dashboard">
+
+
+
+    <padding>
+        <Insets top="40" left="60" right="60" bottom="40"/>
+    </padding>
+
+    <Label fx:id="welcomeLabel" text="Witaj, Imię Nazwisko" styleClass="admin-title"/>
+
+    <Separator maxWidth="400"/>
+
+    <VBox spacing="15" alignment="CENTER">
+        <Button text="🔑 Zarządzaj użytkownikami" onAction="#handleUsers" styleClass="admin-button"/>
+        <Button text="📋 Podgląd logów systemowych" onAction="#handleLogs" styleClass="admin-button"/>
+        <Button text="⚙️ Ustawienia systemu" onAction="#handleSettings" styleClass="admin-button"/>
+        <Button text="🚪 Wyloguj" onAction="#handleLogout" styleClass="admin-button logout-button"/>
+    </VBox>
+</VBox>

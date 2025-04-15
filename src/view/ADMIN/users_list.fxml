@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.admin.UsersListController"
+      styleClass="users-list"
+      spacing="20"
+      stylesheets="@/style/admin/users_list.css">
+
+    <padding>
+        <Insets top="20" left="30" right="30" bottom="30"/>
+    </padding>
+
+    <!-- Górny pasek nawigacyjny -->
+    <HBox alignment="CENTER" spacing="10" maxWidth="Infinity">
+        <Button onAction="#handleBack" styleClass="back-button">
+            <graphic>
+                <FontIcon iconLiteral="fas-arrow-left" iconSize="18"/>
+            </graphic>
+            <text> Powrót</text>
+        </Button>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Label styleClass="section-title">
+            <graphic>
+                <FontIcon iconLiteral="fas-users" iconSize="20"/>
+            </graphic>
+            <text> Zarządzanie użytkownikami</text>
+        </Label>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Button onAction="#handleRefresh" styleClass="refresh-button">
+            <graphic>
+                <FontIcon iconLiteral="fas-sync" iconSize="18"/>
+            </graphic>
+            <text> Odśwież</text>
+        </Button>
+    </HBox>
+
+    <!-- Pasek wyszukiwania i dodawania -->
+    <HBox spacing="15" alignment="CENTER_LEFT" maxWidth="900">
+        <TextField fx:id="searchField" promptText="Szukaj użytkownika..." styleClass="search-field"/>
+
+        <Button styleClass="search-button">
+            <graphic>
+                <FontIcon iconLiteral="fas-search" iconSize="16"/>
+            </graphic>
+        </Button>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Button onAction="#handleAddUser" styleClass="add-button">
+            <graphic>
+                <FontIcon iconLiteral="fas-plus" iconSize="18"/>
+            </graphic>
+            <text> Dodaj użytkownika</text>
+        </Button>
+    </HBox>
+
+    <!-- Tabela użytkowników -->
+    <TableView fx:id="usersTable" prefHeight="500" maxWidth="900" styleClass="users-table">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colName" text="Imię i Nazwisko" prefWidth="200"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
+            <TableColumn fx:id="colRole" text="Rola" prefWidth="120"/>
+            <TableColumn fx:id="colActions" text="Akcje" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>

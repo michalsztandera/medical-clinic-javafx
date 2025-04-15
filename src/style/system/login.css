@@ -1,0 +1,146 @@
+/* === GLOBAL === */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: linear-gradient(to bottom, #f9fafe, #edf0f5);
+    -fx-text-fill: #2c3e50;
+}
+
+/* === HEADER === */
+.header {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-padding: 25 0 25 0;
+    -fx-text-fill: #1e272e;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0.2, 0, 2);
+}
+
+/* === MODAL CONTAINER === */
+.modal-container {
+    -fx-background-color: #ffffff;
+    -fx-padding: 35;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0.3, 0, 10);
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+
+/* === MODAL TITLE === */
+.modal-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+/* === INPUT FIELDS === */
+.modal-input {
+    -fx-pref-width: 100%;
+    -fx-font-size: 15px;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 12 16;
+    -fx-background-color: #f1f2f6;
+    -fx-border-color: #dcdde1;
+    -fx-text-fill: #2c3e50;
+}
+.modal-input:focused {
+    -fx-border-color: #3498db;
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, #3498db44, 8, 0.3, 0, 2);
+}
+
+/* === FORM BUTTONS === */
+.form-button {
+    -fx-background-color: linear-gradient(to right, #2980b9, #3498db);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.2, 0, 2);
+}
+.form-button:hover {
+    -fx-background-color: linear-gradient(to right, #2471a3, #2980b9);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+/* === MENU BUTTONS === */
+.menu-button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-padding: 14 30;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0.2, 0, 4);
+}
+.menu-button:hover {
+    -fx-background-color: #27ae60;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* === MODAL ACTION BUTTONS === */
+.modal-button {
+    -fx-background-color: #e67e22;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 28;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+}
+.modal-button:hover {
+    -fx-background-color: #d35400;
+}
+
+/* === TABLE VIEW === */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dcdde1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-table-cell-border-color: transparent;
+}
+.table-view .column-header {
+    -fx-background-color: #ecf0f1;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+.table-view .table-cell {
+    -fx-padding: 12 8;
+}
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #d0eafc;
+}
+
+/* === TITLES === */
+.form-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* === STATUS LABEL === */
+.status-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-weight: normal;
+}
+
+/* === SEARCH FIELD === */
+.text-field {
+    -fx-padding: 12;
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-border-color: #bdc3c7;
+}
+.text-field:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(gaussian, #3498db44, 6, 0.2, 0, 2);
+}

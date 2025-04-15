@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?scenestylesheet resource="/style/admin/add_users_modal.css"?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.admin.EditUserController"
+      alignment="CENTER" spacing="15"
+      styleClass="modal">
+
+    <padding>
+        <Insets top="20" left="30" right="30" bottom="20"/>
+    </padding>
+
+    <Label styleClass="section-title">
+        <graphic>
+            <FontIcon iconLiteral="fas-user-edit" iconSize="20"/>
+        </graphic>
+        <text> Edytuj użytkownika</text>
+    </Label>
+
+    <TextField fx:id="firstNameField" promptText="Imię"/>
+    <TextField fx:id="lastNameField" promptText="Nazwisko"/>
+    <TextField fx:id="emailField" promptText="Email"/>
+    <TextField fx:id="usernameField" promptText="Login"/>
+    <ComboBox fx:id="roleComboBox">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Administrator"/>
+                <String fx:value="Rejestrator"/>
+                <String fx:value="Lekarz"/>
+                <String fx:value="Pacjent"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button onAction="#handleCancel" styleClass="back-button">
+            <graphic>
+                <FontIcon iconLiteral="fas-times" iconSize="14"/>
+            </graphic>
+            <text> Anuluj</text>
+        </Button>
+
+        <Button onAction="#handleSave" styleClass="add-button">
+            <graphic>
+                <FontIcon iconLiteral="fas-check" iconSize="14"/>
+            </graphic>
+            <text> Zapisz</text>
+        </Button>
+    </HBox>
+</VBox>

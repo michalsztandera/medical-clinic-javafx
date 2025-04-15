@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?scenestylesheet resource="/style/admin/logs_view.css"?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.admin.LogsViewController"
+      alignment="TOP_CENTER"
+      spacing="20"
+      styleClass="logs-view">
+
+    <padding>
+        <Insets top="30" left="40" right="40" bottom="30"/>
+    </padding>
+
+    <Label text="📋 Podgląd logów systemowych" styleClass="section-title"/>
+
+    <TableView fx:id="logsTable" prefHeight="500" maxWidth="1000">
+        <columns>
+            <TableColumn fx:id="colUser" text="Email użytkownika" prefWidth="200"/>
+            <TableColumn fx:id="colAction" text="Akcja" prefWidth="100"/>
+            <TableColumn fx:id="colTarget" text="Obiekt" prefWidth="150"/>
+            <TableColumn fx:id="colMessage" text="Szczegóły" prefWidth="400"/>
+            <TableColumn fx:id="colTime" text="Czas" prefWidth="200"/>
+        </columns>
+    </TableView>
+
+    <Button text="⬅ Powrót" onAction="#handleBack" styleClass="back-button"/>
+
+</VBox>

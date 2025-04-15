@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.admin.SystemSettingsController"
+            fitToWidth="true"
+            stylesheets="@/style/admin/settings.css">
+
+    <VBox spacing="30" styleClass="settings-container">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <!-- Powrót -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button onAction="#handleBack" styleClass="back-button">
+                <graphic>
+                    <FontIcon iconLiteral="fas-arrow-left" iconSize="16"/>
+                </graphic>
+                <text> Powrót</text>
+            </Button>
+        </HBox>
+
+        <Label text="⚙️ Ustawienia systemowe" styleClass="section-title"/>
+
+        <!-- Sekcja: SMTP -->
+        <VBox spacing="10" styleClass="card">
+            <Label text="📧 Konfiguracja e-mail (SMTP)" styleClass="card-title"/>
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="120" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+
+                <Label text="Host:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="smtpHostField" promptText="smtp.gmail.com" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Port:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="smtpPortField" promptText="587" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Login:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="smtpLoginField" promptText="email@example.com" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Hasło:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="smtpPasswordField" promptText="••••••••" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+            <HBox spacing="10">
+                <Button text="Testuj połączenie" onAction="#handleTestEmail"/>
+                <Label fx:id="smtpStatusLabel" text=""/>
+            </HBox>
+            <Button text="Zapisz ustawienia" onAction="#handleSave"/>
+        </VBox>
+
+        <!-- Sekcja: Godziny pracy -->
+        <VBox spacing="10" styleClass="card">
+            <Label text="📅 Godziny pracy kliniki" styleClass="card-title"/>
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="Od:"/>
+                <Spinner fx:id="startHourSpinner"/>
+                <Label text="Do:"/>
+                <Spinner fx:id="endHourSpinner"/>
+                <Button text="Zapisz" onAction="#handleSaveWorkingHours"/>
+            </HBox>
+        </VBox>
+
+        <!-- Sekcja: Demo -->
+        <VBox spacing="10" styleClass="card">
+            <Label text="🧹 Czyszczenie danych testowych" styleClass="card-title"/>
+            <Button text="Usuń dane demo" onAction="#handleClearTestData"/>
+        </VBox>
+
+        <!-- Sekcja: Logi -->
+        <VBox spacing="10" styleClass="card">
+            <Label text="📜 Eksport logów do CSV" styleClass="card-title"/>
+            <Button text="Eksportuj logi" onAction="#handleExportLogs"/>
+        </VBox>
+
+        <!-- Sekcja: Przypomnienia -->
+        <VBox spacing="10" styleClass="card">
+            <Label text="🔔 Przypomnienia dla pacjentów" styleClass="card-title"/>
+            <CheckBox fx:id="remindersEnabledCheckBox" text="Włącz przypomnienia"/>
+            <HBox spacing="10">
+                <Label text="Interwał (godziny):"/>
+                <Spinner fx:id="reminderIntervalSpinner"/>
+            </HBox>
+            <Button text="Zapisz ustawienia przypomnień" onAction="#handleSaveReminderSettings"/>
+        </VBox>
+    </VBox>
+</ScrollPane>

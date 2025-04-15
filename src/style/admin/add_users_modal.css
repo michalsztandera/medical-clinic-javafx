@@ -1,0 +1,45 @@
+.modal {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-spacing: 15;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 10 0;
+}
+
+.text-field,
+.password-field,
+.combo-box {
+    -fx-pref-width: 260px;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 6 10;
+}
+
+.add-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.back-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-padding: 6 12;
+    -fx-content-display: LEFT;
+    -fx-graphic-text-gap: 6;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.system.LoginController"
+      spacing="15" alignment="CENTER"
+      stylesheets="@/style/system/login.css"
+      styleClass="modal-container">
+
+
+    <padding>
+        <Insets top="40" bottom="40" left="60" right="60"/>
+    </padding>
+
+    <Label text="Logowanie" styleClass="modal-title"/>
+
+    <TextField fx:id="emailField" promptText="Email" styleClass="modal-input"/>
+    <PasswordField fx:id="passwordField" promptText="Hasło" styleClass="modal-input"/>
+
+    <Label fx:id="errorLabel" textFill="red" visible="false"/>
+
+    <Button text="Zaloguj się" onAction="#handleLogin" styleClass="form-button"/>
+</VBox>
