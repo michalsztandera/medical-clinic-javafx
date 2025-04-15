@@ -106,7 +106,7 @@ Zastosowano **modularną architekturę MVC**, ułatwiającą przyszły rozwój i
 
 ## 📬 Kontakt
 
-**Autor:** Michał Sztandera  
+**Autor:** Michał Sztandera, Oskar Dobrowolski  
 📧 [michal@mskk.pl](mailto:michal@mskk.pl)  
 
 ---
