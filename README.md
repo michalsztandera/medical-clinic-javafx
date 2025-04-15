@@ -1,71 +1,112 @@
 # 🏥 Medical Clinic Management System (JavaFX)
 
-Projekt desktopowej aplikacji do zarządzania kliniką medyczną — zbudowany w **JavaFX**, z integracją **MySQL**, obsługą użytkowników, logowaniem oraz dynamicznym panelem administracyjnym.
+**Projekt desktopowej aplikacji do zarządzania kliniką medyczną** — zbudowany z myślą o czytelnej architekturze, nowoczesnym UI i wygodnej obsłudze codziennej pracy personelu kliniki. Oparty o JavaFX, MySQL, oraz wzorce projektowe.
 
 ---
 
-## 🚧 Panel Administracyjny — *w trakcie budowy*
+## 🚀 Główne funkcjonalności
 
-🔧 **Trwają prace nad nowoczesnym panelem administracyjnym**, który umożliwi zarządzanie:
+### 🔒 System logowania z rolami
+- Obsługa użytkowników: **Pacjent**, **Lekarz**, **Rejestrator**, **Administrator**
+- Różne poziomy dostępu i interfejsy zależne od roli
 
-- ✅ Listą użytkowników (Pacjenci, Lekarze, Rejestratorzy, Administratorzy)
-- ✅ Dodawaniem, edytowaniem i usuwaniem kont
-- ✅ Rejestrowaniem logów systemowych (kto co zrobił)
-- ✅ Konfiguracją ustawień systemowych (SMTP, przypomnienia, eksport logów, godziny pracy)
-- 🟡 Nowoczesny i responsywny UI (JavaFX + CSS)
-- 🛠️ Planowana przyszła integracja z e-mail/SMS oraz powiadomieniami
+### 👨‍⚕️ Zarządzanie pacjentami i lekarzami
+- Dodawanie, edytowanie, usuwanie rekordów
+- Podgląd danych kontaktowych i historii wizyt
 
-![Status](https://img.shields.io/badge/Admin%20Panel-WIP-yellow)
+### 🗓️ Obsługa wizyt
+- Rejestracja wizyt przez rejestratora
+- Podgląd nadchodzących konsultacji
+- Historia wizyt dla pacjenta i lekarza
+
+### 📜 System logów
+- Rejestrowanie akcji użytkowników (kto, co, kiedy, na czym)
+- Dostępne tylko dla administratora
+- Możliwość eksportu do CSV
+
+### 💌 Powiadomienia (SMTP)
+- Konfiguracja danych SMTP w panelu admina
+- Wysyłanie przypomnień o wizytach (planowane rozszerzenie o SMS)
 
 ---
 
-## ✨ Główne funkcje aplikacji
+## ⚙️ Panel Administracyjny (w budowie) 🚧
 
-- 🔒 **Logowanie** z uwzględnieniem ról użytkownika
-- 🗓️ **Zarządzanie wizytami** – dodawanie, edytowanie, podgląd
-- 🧑‍⚕️ **Zarządzanie pacjentami i lekarzami**
-- 📊 **System logów** – rejestrowanie akcji użytkowników
-- 💌 **Moduł powiadomień (SMTP)** – *w przygotowaniu*
-- 🎨 **Nowoczesny interfejs** oparty na stylach CSS i ikonach FontAwesome
+Nowoczesny panel administratora z dynamicznymi modułami:
+
+- ✅ Zarządzanie użytkownikami:
+  - Lista użytkowników (filtracja po rolach)
+  - Dodawanie, edytowanie, usuwanie kont
+- ✅ Systemowe logi i ich eksport
+- ✅ Ustawienia systemowe:
+  - SMTP (host, port, login, hasło)
+  - Przypomnienia dla pacjentów (interwał, włącz/wyłącz)
+  - Godziny pracy kliniki
+- 🛠️ Zgłoszenia błędów i utrzymanie (moduł w fazie planowania)
+- 📈 Statystyki systemowe (przyszła funkcjonalność)
+- 🔧 Zarządzanie testowymi danymi i czyszczenie
 
 ---
 
 ## 🖥️ Technologie
 
-- Java 22 + JavaFX 24
-- MySQL 8+
-- JDBC (z obsługą wyjątków i testem połączenia)
-- Maven (planowane)
-- Ikony: FontAwesomeFX / Ikonli
-- CSS 3.0 (dla stylizacji komponentów JavaFX)
+- **Java 22**
+- **JavaFX 24**
+- **MySQL 8+**
+- **JDBC** z obsługą wyjątków i testem połączenia
+- **CSS 3.0** do stylizacji
+- **Ikony**: FontAwesomeFX + Ikonli
+- **Maven** (planowana migracja)
 
 ---
 
-## 🛠️ Jak uruchomić?
+## 🧠 Architektura i wzorce projektowe
 
-1. Upewnij się, że masz zainstalowane:
+Projekt korzysta z popularnych wzorców:
+- **Factory**
+- **Singleton**
+- **Adapter**
+- **Facade**
+- **Observer**
+- **Command**
+
+Zastosowano **modularną architekturę MVC**, ułatwiającą przyszły rozwój i testowanie.
+
+---
+
+## 📦 Jak uruchomić?
+
+1. Zainstaluj:
    - Java 22+
    - JavaFX SDK 24
-   - MySQL + baza `medical-clinic`
-2. Skonfiguruj połączenie z bazą danych w pliku `DBUtil.java`
-3. Uruchom klasę `MainApp.java`
+   - MySQL
+2. Utwórz bazę `medical-clinic` i skonfiguruj dane w `DBUtil.java`
+3. Uruchom `MainApp.java` w IntelliJ lub innym IDE
+4. (Opcjonalnie) Skonfiguruj SMTP w ustawieniach admina
 
 ---
 
 ## 📌 Status projektu
 
-- [x] Podstawowa architektura aplikacji
-- [x] Logowanie + Role
-- [x] Moduł pacjentów i lekarzy
-- [x] System logów
-- [ ] Panel administratora 🛠️ (w budowie)
-- [ ] SMTP / powiadomienia
-- [ ] Wersja produkcyjna (.exe / .jar)
+| Moduł                          | Status             |
+|-------------------------------|--------------------|
+| Logowanie + Role              | ✅ Zakończono       |
+| Pacjenci i Lekarze            | ✅ Zakończono       |
+| Rejestracja Wizyt             | ✅ Zakończono       |
+| System Logów                  | ✅ Zakończono       |
+| Panel Administratora          | 🚧 W trakcie        |
+| Moduł SMTP                    | 🚧 W trakcie        |
+| Eksport logów do CSV          | ✅ Zakończono       |
+| Panel użytkowników (admin)    | ✅ Zakończono       |
+| Powiadomienia SMS             | 🔜 W planach        |
+| Dashboard statystyk           | 🔜 W planach        |
+| Wersja .JAR/.EXE              | 🔜 W planach        |
 
 ---
 
 ## 📬 Kontakt
 
-Projekt prowadzony przez [Michał Sztandera](https://github.com/michalsztandera)
+**Autor:** Michał Sztandera  
+📧 [michalsztandera@gmail.com](mailto:michalsztandera@gmail.com)  
 
 ---
